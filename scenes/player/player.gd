@@ -3,8 +3,7 @@ extends CharacterBody2D
 
 @export var camera : Camera2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 233.0
 
 
 func _physics_process(delta: float) -> void:

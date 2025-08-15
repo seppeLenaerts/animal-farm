@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1bj2kfyjwue2"]
 
 [ext_resource type="Script" uid="uid://caadx848jwpya" path="res://scenes/player/player.gd" id="1_8afob"]
-[ext_resource type="Texture2D" uid="uid://nrjs20pta0k1" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_dovo2"]
+[ext_resource type="Texture2D" uid="uid://wwpyilnb7urb" path="res://assets/animal-farm/ducky1-Sheet.png" id="2_dovo2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
 atlas = ExtResource("2_dovo2")
-region = Rect2(15.332, 14.9901, 17.5893, 18.371)
+region = Rect2(132.432, 3.86027, 24.0357, 28.2869)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_8afob")

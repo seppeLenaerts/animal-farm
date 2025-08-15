@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://cu3q87q0fy15k"]
+[gd_scene load_steps=4 format=4 uid="uid://cu3q87q0fy15k"]
 
 [ext_resource type="TileSet" uid="uid://6cvmo72ljqjy" path="res://assets/tilesets/ground.tres" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c1bj2kfyjwue2" path="res://scenes/player/player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dmr2sg34wubq6" path="res://scenes/objects/nature/tree_1.tscn" id="3_h2yge"]
 
 [node name="Root" type="Node2D"]
 
@@ -11,3 +12,29 @@ tile_set = ExtResource("1_ig7tw")
 
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(285, 209)
+
+[node name="trees" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="trees" instance=ExtResource("3_h2yge")]
+position = Vector2(362, 176)
+
+[node name="StaticBody2D2" parent="trees" instance=ExtResource("3_h2yge")]
+position = Vector2(421, 108)
+
+[node name="StaticBody2D4" parent="trees" instance=ExtResource("3_h2yge")]
+position = Vector2(144, 139)
+
+[node name="StaticBody2D5" parent="trees" instance=ExtResource("3_h2yge")]
+position = Vector2(499, 262)
+
+[node name="StaticBody2D6" parent="trees" instance=ExtResource("3_h2yge")]
+position = Vector2(437, 293)
+
+[node name="StaticBody2D7" parent="trees" instance=ExtResource("3_h2yge")]
+position = Vector2(375, 307)
+
+[node name="StaticBody2D8" parent="trees" instance=ExtResource("3_h2yge")]
+position = Vector2(281, 299)
+
+[node name="StaticBody2D3" parent="trees" instance=ExtResource("3_h2yge")]
+position = Vector2(454, 195)
