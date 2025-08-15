@@ -6,14 +6,14 @@ extends Area2D
 var mouse_in_area = false
 
 func _on_mouse_entered():
+	mouse_in_area = true
 	if is_player_near_object.is_close:
-		mouse_in_area = true
 		sprite.modulate = Color(0.8, 0.6, 0.7)
 
 func _on_mouse_exited():
-	if is_player_near_object.is_close:
-		mouse_in_area = false
-		sprite.modulate = Color.WHITE
+	mouse_in_area = false
+	sprite.modulate = Color.WHITE
+		
 
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
