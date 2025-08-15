@@ -9,5 +9,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func addApple() -> void:
+func add_apple() -> void:
 	apples += 1

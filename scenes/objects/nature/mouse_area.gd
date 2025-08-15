@@ -24,3 +24,4 @@ func _unhandled_input(event):
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 			sprite.hide()
+			GameManagerGlobal.add_apple()
