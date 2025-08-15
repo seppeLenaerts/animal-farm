@@ -3,12 +3,29 @@ extends CharacterBody2D
 class_name Player
 
 @export var camera : Camera2D
+@export var sprite : AnimatedSprite2D
 
-const SPEED = 233.0
+const SPEED = 133.0
 
 
 func _physics_process(_delta: float) -> void:
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * SPEED
+
+	if velocity.x > 0:
+		sprite.flip_h = true
+	else:
+		sprite.flip_h = false
+
+	if velocity.y == 0:
+		sprite.animation = "sideways"
+	else:
+		sprite.animation = "down"
+
+
+	if velocity != Vector2.ZERO:
+		sprite.play()
+	else:
+		sprite.stop()
 	move_and_slide()
 
 func _unhandled_input(event):
