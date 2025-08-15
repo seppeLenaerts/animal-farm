@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmr2sg34wubq6"]
+[gd_scene load_steps=6 format=3 uid="uid://dmr2sg34wubq6"]
 
 [ext_resource type="Texture2D" uid="uid://c0mn8kfnx4f6p" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_ket7n"]
+[ext_resource type="Script" uid="uid://c20nwo4a6v30t" path="res://scenes/objects/nature/mouse_area.gd" id="2_5vbxs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vbxs"]
 atlas = ExtResource("1_ket7n")
@@ -8,6 +9,9 @@ region = Rect2(50.8973, -0.155937, 27.3058, 34.8272)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i08wx"]
 size = Vector2(14, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i08wx"]
+radius = 12.0
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
@@ -17,3 +21,11 @@ texture = SubResource("AtlasTexture_5vbxs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_i08wx")
+
+[node name="MouseArea" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("2_5vbxs")
+sprite = NodePath("../Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_i08wx")
