@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://cu3q87q0fy15k"]
 
 [ext_resource type="TileSet" uid="uid://6cvmo72ljqjy" path="res://assets/tilesets/ground.tres" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://dfcrl15iyjmqd" path="res://game_manager.gd" id="1_lquwl"]
+[ext_resource type="Script" path="res://game_manager.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c1bj2kfyjwue2" path="res://scenes/player/player.tscn" id="2_0xm2m"]
 [ext_resource type="TileSet" uid="uid://bptyy1rmbqqht" path="res://assets/tilesets/ground_tessa.tres" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dmr2sg34wubq6" path="res://scenes/objects/nature/tree_1.tscn" id="3_h2yge"]

@@ -1,15 +1,17 @@
 extends Area2D
 
-var player_in_area = false
+class_name IsPlayerNearObjectDetector
+
+var is_close = false
 
 func _on_body_entered(body: Node2D):
 	if body is Player:
 		print("Ik ben bij een boom")
-		player_in_area = true
+		is_close = true
 
 func _on_body_exited(body: Node2D):
 	if body is Player:
-		player_in_area = true
+		is_close = false
 		print("Ik ben NIET bij een boom")
 
 func _ready():

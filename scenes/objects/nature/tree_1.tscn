@@ -36,5 +36,6 @@ script = ExtResource("3_i08wx")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TreePlayerArea"]
 shape = SubResource("CircleShape2D_47xqs")
 
-[node name="MouseArea" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("2_i08wx")]
+[node name="MouseArea" parent="." node_paths=PackedStringArray("sprite", "is_player_near_object") instance=ExtResource("2_i08wx")]
 sprite = NodePath("../AppleTree")
+is_player_near_object = NodePath("../TreePlayerArea")
