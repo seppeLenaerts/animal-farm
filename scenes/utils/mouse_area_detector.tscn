@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bby0eiaxjyauo"]
+
+[ext_resource type="Script" uid="uid://c20nwo4a6v30t" path="res://scenes/objects/nature/mouse_area.gd" id="1_8ffj1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i08wx"]
+radius = 12.0
+
+[node name="MouseArea" type="Area2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_8ffj1")
+sprite = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_i08wx")
