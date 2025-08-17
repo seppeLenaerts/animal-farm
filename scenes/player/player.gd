@@ -10,23 +10,31 @@ const SPEED = 133.0
 
 func _physics_process(_delta: float) -> void:
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * SPEED
+	
+	_select_animation()
+	_determine_flip_sprite()
+	_play_animation_if_moving()
+	move_and_slide()
 
+func _select_animation():
+	if velocity.y > 0 and velocity.x == 0:
+		sprite.animation = "down"
+	elif velocity.y < 0 and velocity.x == 0:
+		sprite.animation = "up"
+	elif velocity.x != 0:
+		sprite.animation = "sideways"
+		
+func _determine_flip_sprite():
 	if velocity.x > 0:
 		sprite.flip_h = true
-	else:
+	elif velocity.x < 0:
 		sprite.flip_h = false
-
-	if velocity.y == 0:
-		sprite.animation = "sideways"
-	else:
-		sprite.animation = "down"
-
-
+		
+func _play_animation_if_moving():
 	if velocity != Vector2.ZERO:
 		sprite.play()
 	else:
 		sprite.stop()
-	move_and_slide()
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
