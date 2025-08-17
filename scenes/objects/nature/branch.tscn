@@ -18,7 +18,7 @@ size = Vector2(16, 8)
 [node name="Branch" type="StaticBody2D" node_paths=PackedStringArray("mouse_detector", "player_detector", "sprite")]
 script = ExtResource("1_6ur0s")
 mouse_detector = NodePath("MouseArea")
-player_detector = NodePath("TreePlayerArea")
+player_detector = NodePath("PlayerArea")
 sprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -34,6 +34,6 @@ position = Vector2(0, 4)
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_6ur0s")
 
-[node name="TreePlayerArea" parent="." instance=ExtResource("4_4ga5c")]
+[node name="PlayerArea" parent="." instance=ExtResource("4_4ga5c")]
 
 [editable path="MouseArea"]

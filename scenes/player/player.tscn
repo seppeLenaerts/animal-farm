@@ -178,7 +178,7 @@ sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h17s1")
-animation = &"sideways"
+animation = &"up"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
