@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://caadx848jwpya" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://ckh1l0vmsdvii" path="res://assets/animal-farm/mduckan-Sheet.png" id="2_dovo2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("2_dovo2")
 region = Rect2(0, 32, 32, 32)
@@ -116,13 +114,13 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
+radius = 5.09902
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "sprite")]
 script = ExtResource("1_8afob")
 camera = NodePath("Camera2D")
 sprite = NodePath("Sprite2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_dovo2")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h17s1")
@@ -130,3 +128,7 @@ animation = &"down"
 frame_progress = 0.98439
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_dovo2")

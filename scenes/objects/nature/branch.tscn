@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://cca71owmy7rck"]
+
+[ext_resource type="Script" uid="uid://ro3tw54lmd04" path="res://scenes/objects/nature/branch.gd" id="1_6ur0s"]
+[ext_resource type="Texture2D" uid="uid://c0mn8kfnx4f6p" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_nmaa5"]
+[ext_resource type="PackedScene" uid="uid://bby0eiaxjyauo" path="res://scenes/utils/mouse_area_detector.tscn" id="2_8pxef"]
+[ext_resource type="PackedScene" uid="uid://dcujslreytx3r" path="res://scenes/utils/player_area_detector.tscn" id="4_4ga5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pxef"]
+size = Vector2(16, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6kth"]
+atlas = ExtResource("1_nmaa5")
+region = Rect2(80, 35, 16, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ur0s"]
+size = Vector2(16, 8)
+
+[node name="Branch" type="StaticBody2D" node_paths=PackedStringArray("mouse_detector", "player_detector", "sprite")]
+script = ExtResource("1_6ur0s")
+mouse_detector = NodePath("MouseArea")
+player_detector = NodePath("TreePlayerArea")
+sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8pxef")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_q6kth")
+
+[node name="MouseArea" parent="." instance=ExtResource("2_8pxef")]
+position = Vector2(0, 4)
+
+[node name="CollisionShape2D" parent="MouseArea" index="0"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_6ur0s")
+
+[node name="TreePlayerArea" parent="." instance=ExtResource("4_4ga5c")]
+
+[editable path="MouseArea"]

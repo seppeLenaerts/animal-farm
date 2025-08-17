@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @export var mouse_area : MouseDetector
-@export var player_near_object : IsPlayerNearObjectDetector
+@export var player_near_object : PlayerDetector
 @export var sprite_to_hide : Sprite2D
 
 func _ready() -> void:

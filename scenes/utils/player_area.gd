@@ -1,6 +1,6 @@
 extends Area2D
 
-class_name IsPlayerNearObjectDetector
+class_name PlayerDetector
 
 var is_close = false
 
