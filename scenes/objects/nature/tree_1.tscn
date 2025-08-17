@@ -1,32 +1,57 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmr2sg34wubq6"]
+[gd_scene load_steps=11 format=3 uid="uid://dmr2sg34wubq6"]
 
 [ext_resource type="Script" uid="uid://bpd3ye4n7h0tf" path="res://scenes/objects/nature/apple_tree.gd" id="1_47xqs"]
-[ext_resource type="Texture2D" uid="uid://c0mn8kfnx4f6p" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_ket7n"]
+[ext_resource type="Texture2D" uid="uid://bdirwkw8yt5wy" path="res://assets/Spritesheet_environment.png" id="2_47xqs"]
 [ext_resource type="PackedScene" uid="uid://bby0eiaxjyauo" path="res://scenes/utils/mouse_area_detector.tscn" id="2_i08wx"]
 [ext_resource type="PackedScene" uid="uid://dcujslreytx3r" path="res://scenes/utils/player_area_detector.tscn" id="3_47xqs"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5vbxs"]
-atlas = ExtResource("1_ket7n")
-region = Rect2(19.5652, 0.587633, 25.6121, 31.796)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab3wm"]
+atlas = ExtResource("2_47xqs")
+region = Rect2(128, 32, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i08wx"]
-atlas = ExtResource("1_ket7n")
-region = Rect2(50.9106, 0.335221, 26.4889, 31.4729)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ba0w"]
+atlas = ExtResource("2_47xqs")
+region = Rect2(160, 32, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sem48"]
+atlas = ExtResource("2_47xqs")
+region = Rect2(192, 32, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i32bg"]
+atlas = ExtResource("2_47xqs")
+region = Rect2(224, 32, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxtl0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab3wm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ba0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sem48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i32bg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i08wx"]
 size = Vector2(14, 13)
 
-[node name="AppleTree" type="StaticBody2D" node_paths=PackedStringArray("mouse_area", "player_near_object", "sprite_to_hide")]
+[node name="AppleTree" type="StaticBody2D" node_paths=PackedStringArray("mouse_area", "player_near_object", "sprite")]
 script = ExtResource("1_47xqs")
 mouse_area = NodePath("MouseArea")
 player_near_object = NodePath("PlayerArea")
-sprite_to_hide = NodePath("AppleTree")
+sprite = NodePath("AppleTree")
 
-[node name="EmptyTree" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_5vbxs")
-
-[node name="AppleTree" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_i08wx")
+[node name="AppleTree" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gxtl0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6.5)
@@ -35,3 +60,8 @@ shape = SubResource("RectangleShape2D_i08wx")
 [node name="PlayerArea" parent="." instance=ExtResource("3_47xqs")]
 
 [node name="MouseArea" parent="." instance=ExtResource("2_i08wx")]
+
+[node name="CollisionShape2D" parent="MouseArea" index="0"]
+position = Vector2(0, -7)
+
+[editable path="MouseArea"]
