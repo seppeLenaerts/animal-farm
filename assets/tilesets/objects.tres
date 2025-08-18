@@ -1,9 +1,11 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dllbatj4nu1tl"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://dllbatj4nu1tl"]
 
 [ext_resource type="PackedScene" uid="uid://cca71owmy7rck" path="res://scenes/objects/nature/branch.tscn" id="1_ugcsa"]
+[ext_resource type="PackedScene" uid="uid://cu5m3y1k65ms2" path="res://scenes/objects/nature/carrot.tscn" id="2_b61qi"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_b61qi"]
 scenes/1/scene = ExtResource("1_ugcsa")
+scenes/2/scene = ExtResource("2_b61qi")
 
 [resource]
 sources/0 = SubResource("TileSetScenesCollectionSource_b61qi")

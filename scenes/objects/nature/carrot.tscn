@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://cu5m3y1k65ms2"]
+
+[ext_resource type="Script" uid="uid://cnyhegpur0peh" path="res://scenes/objects/nature/carrot.gd" id="1_2noys"]
+[ext_resource type="Texture2D" uid="uid://ccfaqrjxn52vf" path="res://assets/bugenveg-Sheet.png" id="1_fyya2"]
+[ext_resource type="PackedScene" uid="uid://bby0eiaxjyauo" path="res://scenes/utils/mouse_area_detector.tscn" id="2_12rnl"]
+[ext_resource type="PackedScene" uid="uid://dcujslreytx3r" path="res://scenes/utils/player_area_detector.tscn" id="2_odjd5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12rnl"]
+atlas = ExtResource("1_fyya2")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odjd5"]
+atlas = ExtResource("1_fyya2")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2noys"]
+atlas = ExtResource("1_fyya2")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8pka"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12rnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odjd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2noys")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Carrot" type="Node2D" node_paths=PackedStringArray("mouse_detector", "player_detector", "sprite")]
+script = ExtResource("1_2noys")
+mouse_detector = NodePath("MouseArea")
+player_detector = NodePath("PlayerArea")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f8pka")
+
+[node name="PlayerArea" parent="." instance=ExtResource("2_odjd5")]
+
+[node name="MouseArea" parent="." instance=ExtResource("2_12rnl")]
+position = Vector2(0, 3)
+
+[editable path="MouseArea"]
