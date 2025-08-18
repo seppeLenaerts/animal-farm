@@ -42,7 +42,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i08wx"]
-size = Vector2(14, 13)
+size = Vector2(16, 7.75)
 
 [node name="AppleTree" type="StaticBody2D" node_paths=PackedStringArray("mouse_area", "player_near_object", "sprite")]
 script = ExtResource("1_47xqs")
@@ -54,7 +54,7 @@ sprite = NodePath("AppleTree")
 sprite_frames = SubResource("SpriteFrames_gxtl0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.5)
+position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_i08wx")
 
 [node name="PlayerArea" parent="." instance=ExtResource("3_47xqs")]

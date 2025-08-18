@@ -3,11 +3,10 @@
 [ext_resource type="Script" uid="uid://c20nwo4a6v30t" path="res://scenes/utils/mouse_area.gd" id="1_8ffj1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i08wx"]
-radius = 12.0
+radius = 17.0294
 
 [node name="MouseArea" type="Area2D"]
 script = ExtResource("1_8ffj1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_i08wx")
