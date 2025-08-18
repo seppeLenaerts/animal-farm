@@ -3,6 +3,7 @@ extends StaticBody2D
 @export var mouse_area : MouseDetector
 @export var player_near_object : PlayerDetector
 @export var sprite : AnimatedSprite2D
+var consumable : bool = true
 
 func _ready() -> void:
 	mouse_area.area_clicked.connect(_apple_tree_clicked)
@@ -16,6 +17,8 @@ func _process(_delta: float) -> void:
 
 
 func _apple_tree_clicked() -> void:
-	if (player_near_object.is_close):
+	if (player_near_object.is_close and consumable):
+		consumable = false
 		sprite.play()
 		GameManagerGlobal.add_apple()
+		GameManagerGlobal.use_stamina(5)

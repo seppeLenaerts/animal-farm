@@ -14,7 +14,9 @@ func _physics_process(_delta: float) -> void:
 	_select_animation()
 	_determine_flip_sprite()
 	_play_animation_if_moving()
+	_consume_stamina_if_moving()
 	move_and_slide()
+	
 
 func _select_animation():
 	if velocity.y > 0 and velocity.x == 0:
@@ -23,18 +25,25 @@ func _select_animation():
 		sprite.animation = "up"
 	elif velocity.x != 0:
 		sprite.animation = "sideways"
-		
+
+
 func _determine_flip_sprite():
 	if velocity.x > 0:
 		sprite.flip_h = true
 	elif velocity.x < 0:
 		sprite.flip_h = false
-		
+
+
 func _play_animation_if_moving():
 	if velocity != Vector2.ZERO:
 		sprite.play()
 	else:
 		sprite.stop()
+
+
+func _consume_stamina_if_moving():
+	if velocity != Vector2.ZERO:
+		GameManagerGlobal.use_stamina(0.03)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:

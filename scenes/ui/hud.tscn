@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5sh3f2tb2v4j"]
+
+[ext_resource type="Script" uid="uid://uui4282sww1y" path="res://scenes/ui/stamina_bar.gd" id="1_0mwgc"]
+[ext_resource type="Script" uid="uid://by2w816m18qtr" path="res://scenes/ui/apple_label.gd" id="1_hqnrr"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="AppleLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 31
+text = "Apples: 0"
+script = ExtResource("1_hqnrr")
+
+[node name="StaminaBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -139.5
+offset_right = 139.5
+offset_bottom = 27.0
+grow_horizontal = 2
+step = 1.0
+show_percentage = false
+script = ExtResource("1_0mwgc")
