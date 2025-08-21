@@ -24,6 +24,8 @@ func _process(_delta):
 func _on_area_clicked() -> void:
 	if (player_detector.is_close and harvestable):
 		GameManagerGlobal.use_stamina(5)
+		var object_layer := get_parent() as TileMapLayer
+		object_layer.erase_cell(object_layer.local_to_map(position))
 		queue_free()
 
 

@@ -1,33 +1,47 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu5m3y1k65ms2"]
+[gd_scene load_steps=11 format=3 uid="uid://cu5m3y1k65ms2"]
 
 [ext_resource type="Script" uid="uid://cnyhegpur0peh" path="res://scenes/objects/nature/carrot.gd" id="1_2noys"]
 [ext_resource type="Texture2D" uid="uid://ccfaqrjxn52vf" path="res://assets/bugenveg-Sheet.png" id="1_fyya2"]
 [ext_resource type="PackedScene" uid="uid://bby0eiaxjyauo" path="res://scenes/utils/mouse_area_detector.tscn" id="2_12rnl"]
 [ext_resource type="PackedScene" uid="uid://dcujslreytx3r" path="res://scenes/utils/player_area_detector.tscn" id="2_odjd5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_12rnl"]
-atlas = ExtResource("1_fyya2")
-region = Rect2(0, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_odjd5"]
-atlas = ExtResource("1_fyya2")
-region = Rect2(16, 48, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_2noys"]
 atlas = ExtResource("1_fyya2")
-region = Rect2(32, 48, 16, 16)
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8pka"]
+atlas = ExtResource("1_fyya2")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jc3a"]
+atlas = ExtResource("1_fyya2")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mybuo"]
+atlas = ExtResource("1_fyya2")
+region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phj8n"]
+atlas = ExtResource("1_fyya2")
+region = Rect2(64, 96, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f8pka"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_12rnl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_odjd5")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_2noys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8pka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jc3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mybuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phj8n")
 }],
 "loop": false,
 "name": &"default",
